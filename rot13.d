@@ -14,9 +14,8 @@ int main(string[] args) {
         return 1;
     }
 
-    char[] line;
     dchar[] yvar;
-    while (input.readln(line)) {
+    foreach (line; input.byLine(KeepTerminator.yes)) {
         foreach (c; line.stride(1)) {
             switch(c) {
             case 'A': .. case 'Z':
@@ -35,5 +34,6 @@ int main(string[] args) {
         yvar = [];
     }
 
+    input.close();
     return 0;
 }
